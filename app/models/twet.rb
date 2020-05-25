@@ -1,0 +1,2 @@
+class Twet < ApplicationRecord
+end
