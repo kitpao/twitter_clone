@@ -1,5 +1,5 @@
 class TwetsController < ApplicationController
-  before_action :set_twet, only: [:show, :edit, :update, :destroy]
+  before_action :set_twet, only: %i[show edit update destroy]
 
   # GET /twets
   # GET /twets.json
@@ -10,6 +10,7 @@ class TwetsController < ApplicationController
   # GET /twets/1
   # GET /twets/1.json
   def show
+    # comment
   end
 
   # GET /twets/new
@@ -19,6 +20,7 @@ class TwetsController < ApplicationController
 
   # GET /twets/1/edit
   def edit
+    # comment
   end
 
   # POST /twets
@@ -62,13 +64,14 @@ class TwetsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_twet
-      @twet = Twet.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def twet_params
-      params.require(:twet).permit(:twet)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_twet
+    @twet = Twet.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def twet_params
+    params.require(:twet).permit(:twet)
+  end
 end

@@ -5,17 +5,17 @@ class TwetsControllerTest < ActionDispatch::IntegrationTest
     @twet = twets(:one)
   end
 
-  test "should get index" do
+  test 'should get index' do
     get twets_url
     assert_response :success
   end
 
-  test "should get new" do
+  test 'should get new' do
     get new_twet_url
     assert_response :success
   end
 
-  test "should create twet" do
+  test 'should create twet' do
     assert_difference('Twet.count') do
       post twets_url, params: { twet: { twet: @twet.twet } }
     end
@@ -23,22 +23,22 @@ class TwetsControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to twet_url(Twet.last)
   end
 
-  test "should show twet" do
+  test 'should show twet' do
     get twet_url(@twet)
     assert_response :success
   end
 
-  test "should get edit" do
+  test 'should get edit' do
     get edit_twet_url(@twet)
     assert_response :success
   end
 
-  test "should update twet" do
+  test 'should update twet' do
     patch twet_url(@twet), params: { twet: { twet: @twet.twet } }
     assert_redirected_to twet_url(@twet)
   end
 
-  test "should destroy twet" do
+  test 'should destroy twet' do
     assert_difference('Twet.count', -1) do
       delete twet_url(@twet)
     end

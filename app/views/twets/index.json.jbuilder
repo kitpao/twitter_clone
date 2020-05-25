@@ -1,1 +1,1 @@
-json.array! @twets, partial: "twets/twet", as: :twet
+json.array! @twets, partial: 'twets/twet', as: :twet
