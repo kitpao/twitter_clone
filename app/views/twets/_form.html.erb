@@ -1,22 +1,11 @@
-<%= form_with(model: twet, local: true) do |form| %>
-  <% if twet.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(twet.errors.count, "error") %> prohibited this twet from being saved:</h2>
+<%= simple_form_for(@twet) do |form| %>
+<% form.error_notification %>
 
-      <ul>
-        <% twet.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :twet %>
-    <%= form.text_area :twet %>
+<div class='field'>
+  <div class='control'>
+    <%= form.input :twet, label: 'Twet about it!', input_html: {class: 'textarea'}, wrapper: false, label_html: {class: 'label'}, placeholder: 'Write a new twet...' %>
   </div>
+</div>
+<%= form.button :submit, class: 'button is-info' %>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

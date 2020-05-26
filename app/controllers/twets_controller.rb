@@ -4,7 +4,8 @@ class TwetsController < ApplicationController
   # GET /twets
   # GET /twets.json
   def index
-    @twets = Twet.all
+    @twets = Twet.all.order('created_at DESC')
+    @twet = Twet.new
   end
 
   # GET /twets/1
