@@ -31,7 +31,7 @@ class TwetsController < ApplicationController
 
     respond_to do |format|
       if @twet.save
-        format.html { redirect_to @twet, notice: 'Twet was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Twet was successfully created.' }
         format.json { render :show, status: :created, location: @twet }
       else
         format.html { render :new }
