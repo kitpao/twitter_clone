@@ -1,6 +1,6 @@
 class TwetsController < ApplicationController
   before_action :set_twet, only: %i[show edit update destroy]
-
+  before_action :authenticate_user!, except: %i[index show]
   # GET /twets
   # GET /twets.json
   def index
