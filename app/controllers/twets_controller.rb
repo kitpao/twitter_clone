@@ -16,7 +16,7 @@ class TwetsController < ApplicationController
 
   # GET /twets/new
   def new
-    @twet = Twet.new
+    @twet = current_user.twets.build
   end
 
   # GET /twets/1/edit
@@ -27,7 +27,7 @@ class TwetsController < ApplicationController
   # POST /twets
   # POST /twets.json
   def create
-    @twet = Twet.new(twet_params)
+    @twet = current_user.twets.build(twet_params)
 
     respond_to do |format|
       if @twet.save
