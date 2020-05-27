@@ -1,5 +1,25 @@
-<h1>New Twet</h1>
+<div class='section'>
+  <div class='container'>
+    <div class='columns is-centered'>
+      <div class='column is-half'>
+        <h1 class='title'>Create a new Twet</h1>
+        <%= render 'form', twet: @twet %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<%= render 'form', twet: @twet %>
-
-<%= link_to 'Back', twets_path %>
+<nav class='navbar is-fixed-bottom'>
+  <div class='navbar-menu'>
+    <div class='navbar-item'>
+      <div class='field is-grouped'>
+        <p class='control'>
+          <%= link_to 'Cancel', twets_path, class: 'button is-dark' %>
+        </p>
+        <p class='control'>
+          <%= link_to 'Show', @twet, class: 'button is-info' %>
+        </p>
+      </div>
+    </div>
+  </div>
+</nav>
