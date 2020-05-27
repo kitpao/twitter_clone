@@ -1,4 +1,5 @@
 <div class='column is-half'>
+  <% if user_signed_in? %>
   <article class='media box'>
     <figure class='media-left'>
       <p class='image is-64x64'>
@@ -9,6 +10,8 @@
       <%= render 'twets/form' %>
     </div>
   </article>
+  <% end %>
+
   <% @twets.each do | twet | %>
     <div class='box'>
       <article class='media'>
@@ -19,10 +22,11 @@
         </div>
         <div class='media-content'>
           <div class='content'>
-            <strong>Kitpao</strong><br>
-            <small>@kitpao1</small><br>
+            <strong><%= twet.user.name %></strong><br>
+            <small>@<%= twet.user.username %></small><br>
             <p><%= twet.twet%></p>
           </div>
+          <% if user_signed_in? %>
           <nav class='level'>
             <div class='level-left is-mobile'>
               <%= link_to twet, class: 'level-item' do %>
@@ -42,7 +46,7 @@
               <% end %>
             </div>
           </nav>
-
+          <% end %>
         </div>
       </article>
     </div>
